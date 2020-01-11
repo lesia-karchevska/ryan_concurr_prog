@@ -1,5 +1,7 @@
 package peterson_two_process
 
+import util.VolatileIntArray
+
 //Simple mutex based on Peterson Two Process algorithm
 class Mutex {
 

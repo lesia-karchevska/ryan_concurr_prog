@@ -1,4 +1,4 @@
-package peterson_two_process
+package util
 
 class VolatileIntArray(length: Int) {
 
