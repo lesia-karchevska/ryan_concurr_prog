@@ -2,7 +2,7 @@ package two_process_generalised_for_n
 
 import util.VolatileIntArray
 
-class Mutex(n: Int) {
+class Mutex(n: Int) extends common.Mutex {
 
   //n flags for n processes
   private val flag_level = new VolatileIntArray(n)
