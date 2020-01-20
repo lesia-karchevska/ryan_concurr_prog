@@ -10,6 +10,7 @@ class CAO {
   private val ABORT_2: String = "abort_2"
   private val COMMIT: String = "commit"
 
+  //when several processes read concurrently y and get value -1, the last that wrote to x wins in case x hasn't been modified yet by another process
   def concurr_abort_op(i: Int): String = {
     x = i
     if (!y.equals(-1)) {
