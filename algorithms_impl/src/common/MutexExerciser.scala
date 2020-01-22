@@ -7,7 +7,7 @@ import scala.util.Random
 object MutexExerciser {
 
 
-  def testMutex(getMutex: () => Mutex, start: Int, end: Int): Unit = {
+  def testMutex(getMutex: () => Mutex, start: Int, end: Int, timeTillStop: Int = 5000, waitTime: Int = 3000): Unit = {
 
     val mutex = getMutex.apply()
     @volatile
@@ -28,9 +28,9 @@ object MutexExerciser {
     val processes = Range(start, end).map(i => getProcess(i, new Random))
     processes.foreach(p => p.start)
 
-    Thread.sleep(5000)
+    Thread.sleep(timeTillStop)
     stop = true
-    Thread.sleep(1000)
+    Thread.sleep(waitTime)
     processes.foreach(p => println(p.getState))
   }
 }
