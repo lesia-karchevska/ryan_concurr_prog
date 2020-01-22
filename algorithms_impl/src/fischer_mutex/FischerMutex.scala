@@ -2,6 +2,9 @@ package fischer_mutex
 
 import common.Mutex
 
+//assumption: two consecutive accesses to atomic registers by a process are separated by at most 'delay' time units
+// (if they are not separated by Thread.sleep(delay) call)
+
 class FischerMutex(delay: Int) extends Mutex {
 
   @volatile
