@@ -41,6 +41,6 @@ class FastMutex(n: Int) extends Mutex {
 
   def release_mutex(i: Int) = {
     y = -1
-    flag.update(i, -1)
+    flag.update(i, 0)
   }
 }
