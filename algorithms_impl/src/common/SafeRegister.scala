@@ -1,4 +1,4 @@
-package bakery_algorithm
+package common
 
 class SafeRegister[T](default: T) {
 

@@ -1,6 +1,6 @@
 package bakery_algorithm
 
-import common.Mutex
+import common.{Mutex, SafeRegister}
 
 class BakeryMutex(n: Int) extends Mutex {
 
