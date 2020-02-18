@@ -35,13 +35,13 @@ class Mutex4(delay: Int) extends common.Mutex {
 Algorithm:
 
 acquire_mutex(i)
-  X <- i
+  X <- i             (0)
   repeat
     wait (Y = -1)    (1)
     Y <- i           (2)
     if (X = i)       (3)
       allowed = false (4)
-      return()
+      return()        (4*)
     else
       delay(3 * delta)
   until (Y = i && allowed)  (5)
@@ -76,6 +76,14 @@ t^rY5_i > t^wY_i + 3 * delta (**), t^rY5_j > t^wY_j + 3 * delta (***) . Without 
 Hence, by (*) combined with (***), we have that t^rY5_j > t^wY_j + 3 * delta > t^wY_i - delta + 3 * delta = t^wY_i + 2 * delta ,
 so, by assumption (^), we have that p_j couldn't've read j from Y at line (5) since p_i had already overwritten Y.
 
+*The algorithm is deadlock-free.*  Assume that there is a finite set C of of processes that execute the repeat statement and read -1 from Y (obviously, no process
+can be held infinitely at line (0)). In case there is a process p_i \in C with X = i , it will definitely execute return at line (4*).
+Indeed, for any two processes p_i and p_j that read -1 from Y, we have that |t^wY_i - t^wY_j| < delta (*). So if p_i is among such processes,
+due to this inequality (*) it will reach (4) earlier than any of the other processes. In case there's no process p_i from C that read i from X,
+the last process that wrote its identity into Y will pass and acquire the lock.
 
+
+Also, it is obvious that in case only one process p_i is interested in the critical section, it will set X to i and proceed to
+acquire the lock in (4*) without calling delay statement.
 
  */
