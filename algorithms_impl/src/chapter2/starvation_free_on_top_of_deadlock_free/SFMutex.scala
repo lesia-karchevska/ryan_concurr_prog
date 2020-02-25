@@ -2,7 +2,7 @@ package chapter2.starvation_free_on_top_of_deadlock_free
 
 import chapter2.common.Mutex
 import chapter2.concurrency_abortable_algorithm.FastMutex
-import chapter2.util.VolatileIntArray
+import util.VolatileIntArray
 
 class SFMutex(n: Int) extends Mutex {
 

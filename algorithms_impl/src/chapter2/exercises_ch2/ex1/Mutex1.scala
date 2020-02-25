@@ -1,7 +1,7 @@
 package chapter2.exercises_ch2.ex1
 
 import chapter2.common.Mutex
-import chapter2.util.VolatileIntArray
+import util.VolatileIntArray
 
 class Mutex1 extends Mutex {
 

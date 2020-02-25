@@ -1,6 +1,6 @@
 package chapter2.two_process_generalised_for_n
 
-import chapter2.util.VolatileIntArray
+import util.VolatileIntArray
 
 class Mutex(n: Int) extends chapter2.common.Mutex {
 

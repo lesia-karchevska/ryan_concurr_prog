@@ -1,5 +1,7 @@
 package chapter3.producer_consumer
 
+import chapter3.common.Semaphore
+
 class Producer[T](busy: Semaphore, free: Semaphore, buffer: Array[T]) {
 
   private var out = 0;

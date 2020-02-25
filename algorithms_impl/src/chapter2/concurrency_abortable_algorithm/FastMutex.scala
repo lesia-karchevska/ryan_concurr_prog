@@ -1,7 +1,7 @@
 package chapter2.concurrency_abortable_algorithm
 
 import chapter2.common.Mutex
-import chapter2.util.VolatileIntArray
+import util.VolatileIntArray
 
 class FastMutex(n: Int) extends Mutex {
 

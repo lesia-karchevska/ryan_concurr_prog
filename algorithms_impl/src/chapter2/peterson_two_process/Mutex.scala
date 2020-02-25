@@ -1,6 +1,6 @@
 package chapter2.peterson_two_process
 
-import chapter2.util.VolatileIntArray
+import util.VolatileIntArray
 
 //Simple mutex based on Peterson Two Process algorithm
 class Mutex extends chapter2.common.Mutex{

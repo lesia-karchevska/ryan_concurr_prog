@@ -1,4 +1,4 @@
-package chapter3.producer_consumer
+package chapter3.common
 
 class Semaphore(v: Int, max: Int) {
 

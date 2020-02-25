@@ -1,5 +1,7 @@
 package chapter3.producer_consumer
 
+import chapter3.common.Semaphore
+
 import scala.util.Random
 
 object RunConsumerProducer extends App {

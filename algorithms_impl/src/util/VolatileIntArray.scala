@@ -1,4 +1,4 @@
-package chapter2.util
+package util
 
 class VolatileIntArray(length: Int) {
 
